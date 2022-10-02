@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '0.2'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17 // new
+    targetCompatibility = JavaVersion.VERSION_17 // new
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "org.example.Main"
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+//application {
+//    mainClass = 'com.sergiomartinrubio.jrebuildexample.App'
+//}
+
+test {
+    useJUnitPlatform()
+}
